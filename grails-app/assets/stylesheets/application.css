@@ -9,5 +9,6 @@
 *
 *= require bootstrap
 *= require nextstyle
+*= require fontawesome/css/all.min
 *= require_self
 */

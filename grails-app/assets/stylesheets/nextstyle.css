@@ -106,3 +106,8 @@ h1 {
 .alert .message{
     font-weight: bold;
 }
+
+.action-row {
+    width: 135px;
+    text-align: center;
+}

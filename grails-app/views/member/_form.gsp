@@ -7,6 +7,7 @@
 <div class="form-group">
     <label><g:message code="last.name"/></label>
     <g:textField name="lastName" class="form-control" value="${member?.lastName}" placeholder="Please Enter Last Name"/>
+    <UIHelper:renderErrorMessage fieldName="lastName" model="${member}" errorMessage="please.enter.last.name"/>
 </div>
 
 <div class="form-group">

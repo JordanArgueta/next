@@ -17,7 +17,7 @@ class Member {
     static constraints = {
         email(email: true, nullable: false, unique: true, blank: false)
         password(blank: false)
-        lastName(nullable: true)
+        lastName(nullable: false)
         identityHash(nullable: true)
         identityHashLastUpdate(nullable: true)
     }
