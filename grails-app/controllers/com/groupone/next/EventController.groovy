@@ -57,6 +57,7 @@ class EventController {
 
     def save() {
         def response = eventService.save(params)
+        println(params)
         if (!response.isSuccess) {
             flash.redirectParams = response.model
             redirect(controller: "event", action: "create")

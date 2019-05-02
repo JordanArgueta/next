@@ -16,11 +16,6 @@
 </div>
 <div class="form-group">
     <label><g:message code="event.date"/></label>
-    <g:field type="date" name="date" class="form-control" value="${event?.date}"/>
-</div>
-
-<div class="form-group">
-    <label><g:message code="event.time"/></label>
-    <g:textField name="time" class="form-control" value="${event?.time}"/>
+    <g:field type="date" name="date" class="form-control" value="${event?.date}" placeholder="mm/dd/yyyy"/>
 </div>
 
