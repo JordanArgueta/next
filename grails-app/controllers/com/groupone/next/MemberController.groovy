@@ -23,6 +23,32 @@ class MemberController {
         [member: flash.redirectParams]
     }
 
+    def signIn() {
+        [member: flash.message]
+
+    }
+
+    def login() {
+
+        if (params.email == "admin@uncw.edu" && params.password == "pass") {
+            flash.message = "Login succeeded"
+            session.user = "admin"
+            redirect(action: "index")
+        }
+        else {
+            flash.message = "Login failed"
+            redirect(action: "signIn")
+        }
+
+    }
+
+    def logout() {
+        session.user = null
+        flash.message = "You have been logged out."
+        redirect(action: "signIn")
+    }
+
+
     def save() {
         def response = memberService.save(params)
         if (!response.isSuccess) {
