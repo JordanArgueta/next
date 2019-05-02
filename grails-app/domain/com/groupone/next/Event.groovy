@@ -6,6 +6,8 @@ class Event {
     String eventDesc
     String address
     String date
+    String time
+
 
     static constraints = {
         eventName(nullable: false, unique: true)
@@ -15,6 +17,7 @@ class Event {
 
     def eventString() {
         return "Name: " + eventName + " Desc: " + eventDesc + " Address: " + address + " Date: " + date
-
     }
+
+
 }
