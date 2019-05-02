@@ -17,16 +17,12 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark rounded">
-        <a class="navbar-brand" href="http://localhost:8080/">NEXT</a>
-        <g:link controller="member" action="login" class="navbar-brand"><g:message code="login"/></g:link>
-        <a class="navbar-brand" href="http://localhost:8080/member/create">Create a Profile</a>
-        <g:link controller="member" action="logout" class="navbar-brand"><g:message code="logout"/></g:link>
+        <a class="navbar-brand" href="#">NEXT</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
                 data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
     </nav>
 </header>
 
@@ -34,9 +30,9 @@
     <div class = "row">
         <nav class = "col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
             <ul>
-                <li class = "list-group-item"><a href = "http://localhost:8080/">Home</a></li>
-                <li class = "list-group-item"><a href = "http://localhost:8080/member/index">Friends</a></li>
-                <li class = "list-group-item"><a href = "http://localhost:8080/event/index">Events</a></li>
+                <li class = "list-group-item"><a href = "#">Home</a></li>
+                <li class = "list-group-item"><a href = "#">Friends</a></li>
+                <li class = "list-group-item"><a href = "#">Search</a></li>
             </ul>
         </nav>
 

@@ -8,7 +8,6 @@ class EventService {
 
     def save(GrailsParameterMap params){
         Event event = new Event(params)
-        println(event.eventString())
         def response = AppUtil.saveResponse(false, event)
         if (event.validate()){
             event.save(flush: true)
