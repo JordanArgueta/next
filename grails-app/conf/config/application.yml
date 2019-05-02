@@ -1,0 +1,12 @@
+dataSource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    dbCreate: update
+    username: 'eqa9745'
+    password: 'xbX4WnNh4'
+
+
+environments:
+    development:
+        dataSource:
+            dbCreate: update
+            url: "jdbc:mysql://satoshi.cis.uncw.edu/eqa9745?useUnicode=yes&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
