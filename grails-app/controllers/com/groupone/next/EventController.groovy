@@ -13,6 +13,11 @@ class EventController {
         [event: flash.redirectParams]
     }
 
+    def register() {
+        def response = eventService.list(params)
+        [eventList: response.list, total:response.count]
+    }
+
     def edit(Integer id) {
         if (flash.redirectParams) {
             [event: flash.redirectParams]
