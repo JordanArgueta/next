@@ -20,7 +20,7 @@
                 <g:sortableColumn property="eventName" title="${g.message(code: "event.name")}"/>
                 <g:sortableColumn property="eventDesc" title="${g.message(code: "event.desc")}"/>
                 <g:sortableColumn property="address" title="${g.message(code: "event.address")}"/>
-                <g:sortableColumn property="eventDate" title="${g.message(code: "event.date")}"/>
+                <g:sortableColumn property="date" title="${g.message(code: "event.date")}"/>
             </tr>
             </thead>
             <tbody>
@@ -29,7 +29,7 @@
                     <td>${info?.eventName}</td>
                     <td>${info?.eventDesc}</td>
                     <td>${info?.address}</td>
-                    <td>${info?.eventDate}</td>
+                    <td>${info?.date}</td>
                 </tr>
             </g:each>
             </tbody>

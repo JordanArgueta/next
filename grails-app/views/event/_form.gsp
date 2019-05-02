@@ -1,7 +1,7 @@
 <div class="form-group">
-    <label><g:message code="event.name"/> *</label>
-    <g:textField name="eventName" class="form-control" value="${event?.eventName}" placeholder="Please Enter Name of Event"/>
-    <UIHelper:renderErrorMessage fieldName="eventName" model="${event}" errorMessage="please.enter.event.name"/>
+    <label><g:message code="event.name"/></label>
+    <g:textField name="eventName" class="form-control" value="${event?.eventName}" placeholder="Name of Event"/>
+</div>
 </div>
 
 <div class="form-group">
@@ -10,12 +10,12 @@
 </div>
 
 <div class="form-group">
-    <label><g:message code="event.address"/> *</label>
-    <g:field type="address" name="address" class="form-control" value="${event?.address}" placeholder="Please Enter Address"/>
-    <UIHelper:renderErrorMessage fieldName="address" model="${event}" errorMessage="Your Address is not Valid"/>
+    <label><g:message code="event.address"/></label>
+    <g:textField name="address" class="form-control" value="${event?.address}" placeholder="Address"/>
+</div>
 </div>
 <div class="form-group">
-    <label><g:message code="event.date"/> *</label>
-    <g:field type="date" name="eventDate" class="form-control" value="${event?.date}" placeholder="Please Enter Date of Event"/>
+    <label><g:message code="event.date"/></label>
+    <g:field type="date" name="date" class="form-control" value="${event?.date}" placeholder="mm/dd/yyyy"/>
 </div>
 

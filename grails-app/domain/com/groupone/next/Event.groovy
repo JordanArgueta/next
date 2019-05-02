@@ -5,9 +5,14 @@ class Event {
     String eventName
     String eventDesc
     String address
-    Date date
+    String date
 
     static constraints = {
-
     }
+
+    def eventString() {
+        return "Name: " + eventName + " Desc: " + eventDesc + " Address: " + address + " Date: " + date
+    }
+
+
 }
