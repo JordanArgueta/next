@@ -1,6 +1,7 @@
 package com.groupone.next
 
 class Member {
+    //Variables for the member class
     Integer id
     String firstName
     String lastName
