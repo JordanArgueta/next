@@ -10,7 +10,7 @@
 
 <div class="card">
     <div class="card-header">
-        <g:message code="member" args="['Create']"/>
+        <g:message code="member.signup" args="['Create']"/>
     </div>
     <div class="card-body">
         <g:form controller="member" action="save">

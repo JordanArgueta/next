@@ -3,6 +3,8 @@ package com.groupone.next
 class UIHelperTagLib {
     static namespace = "UIHelper"
 
+    AuthenticationService authenticationService
+
     def renderErrorMessage = { attrs, body ->
         def model = attrs.model
         String fieldName = attrs.fieldName
@@ -11,5 +13,6 @@ class UIHelperTagLib {
             out << "<small class='form-text text-danger''><strong>${errorMessage}</strong></small>"
         }
     }
+
 
 }

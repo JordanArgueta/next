@@ -1,3 +1,10 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: j09ar
+  Date: 5/2/2019
+  Time: 9:47 PM
+--%>
+
 <!doctype html>
 <html lang="en" class="no-js">
 <head>
@@ -26,29 +33,17 @@
                 aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        %{--Member Action Menu--}%
-%{-- <ul class="navbar-nav ml-auto">
-     <UIHelper:memberActionMenu/>
- </ul>--}%
-</nav>
+
+    </nav>
 </header>
 
 <div class="container-fluid">
-<div class = "row">
- <nav class = "col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
-     <ul>
-         <li class = "list-group-item"><a href = "http://localhost:8080/">Home</a></li>
-         <li class = "list-group-item"><a href = "http://localhost:8080/member/index">Friends</a></li>
-         <li class = "list-group-item"><a href = "http://localhost:8080/event/index">Events</a></li>
-     </ul>
- </nav>
-
- <main role = "main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
-     <g:layoutBody/>
- </main>
+    <div class="row">
+        <main role="main" class="col-sm-12 ml-sm-auto col-md-12 pt-3">
+            <g:layoutBody/>
+        </main>
+    </div>
 </div>
-</div>
-
 
 <asset:javascript src="application.js"/>
 
