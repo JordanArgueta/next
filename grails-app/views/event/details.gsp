@@ -6,15 +6,14 @@
 --%>
 %{--Include Main Layout--}%
 <meta name="layout" content="main"/>
+<h2> Successfully Registered!</h2>
 
 <div class="card">
     <div class="card-header">
         <g:message code="event" args="['Register']"/>
     </div>
     <div class="card-body">
-    <g:form controller="event" action="register">
-    <g:hiddenField name="id" value="${event.id}"/>
-    </g:form>
+
         <g:if test="${event}">
             <table class="table">
                 <tr>
@@ -34,9 +33,13 @@
                 </tr>
             </table>
         </g:if>
-        <div class="form-action-panel">
-            <g:link controller="event" action="index" class="btn btn-primary"><g:message code="cancel"/></g:link>
-            <g:link controller="event" action="register" class="btn btn-primary"><g:message code="register"/></g:link>
-        </div>
+
+        <g:form controller="event" action="update">
+            <g:hiddenField name="id" value="${event.id}"/>
+            <div class="form-action-panel">
+                <g:link controller="event" action="index" class="btn btn-primary"><g:message code="Back"/></g:link>
+            </div>
+        </g:form>
+
     </div>
 </div>
