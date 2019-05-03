@@ -38,6 +38,7 @@
             <g:hiddenField name="id" value="${event.id}"/>
             <div class="form-action-panel">
                 <g:link controller="event" action="index" class="btn btn-primary"><g:message code="Back"/></g:link>
+                <g:link controller="event" action="register" class="btn btn-primary"><g:message code="Register"/></g:link>
             </div>
         </g:form>
 
