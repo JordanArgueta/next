@@ -7,8 +7,9 @@ class Friend {
     String lastName
     String email
 
+
     static constraints = {
-        image(nullable: true, blank: true)
+
     }
     def getID() {
         return id

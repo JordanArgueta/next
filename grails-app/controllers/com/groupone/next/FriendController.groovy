@@ -24,14 +24,12 @@ class FriendController {
     }
     //saves a friend
     def save() {
-        def response = friendService.save(params, request)
-        if (response.isSuccess) {
-            flash.message = AppUtil.infoMessage(g.message(code: "saved"))
-            redirect(controller: "friend", action: "index")
-        } else {
+        def response = friendService.save(params)
+        if (!response.isSuccess) {
             flash.redirectParams = response.model
-            flash.message = AppUtil.infoMessage(g.message(code: "unable.to.save"), false)
             redirect(controller: "friend", action: "create")
+        }else{
+            redirect(controller: "friend", action: "index")
         }
     }
     //Edits a friend

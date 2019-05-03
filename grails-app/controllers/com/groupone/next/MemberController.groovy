@@ -5,6 +5,7 @@ class MemberController {
 
     MemberService memberService
     AuthenticationService authenticationService
+    FriendService friendService
     //
     def index() {
         def response = memberService.list(params)
@@ -18,6 +19,17 @@ class MemberController {
     //Show details of user
     def details(Integer id) {
         def response = memberService.getById(id)
+
+        if (!response){
+            redirect(controller: "member", action: "index")
+        }else{
+            [member: response]
+        }
+    }
+
+    def follow(Integer id) {
+        def response = memberService.getById(id)
+            response = friendService.save(response)
         if (!response){
             redirect(controller: "member", action: "index")
         }else{

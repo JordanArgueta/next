@@ -6,12 +6,9 @@ class FriendService {
 
     AuthenticationService authenticationService
 
-    def save(Member member){
-        Friend friend = new Friend ()
-        friend.firstName = member.firstName
-        friend.lastName = member.lastName
-        friend.email = member.email
-        def response = AppUtil.saveResponse(false, friend)
+    def save(GrailsParameterMap params){
+        Friend friend = new Friend(params)
+        def response = AppUtil.saveResponse(false,friend)
         if (friend.validate()){
             friend.save(flush: true)
             if(!friend.hasErrors()){
