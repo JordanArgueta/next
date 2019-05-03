@@ -46,6 +46,7 @@
                 <g:sortableColumn property="address" title="${g.message(code: "event.address")}"/>
                 <g:sortableColumn property="date" title="${g.message(code: "event.date")}"/>
                 <g:sortableColumn property="time" title="${g.message(code: "event.time")}"/>
+                <th class="action-row"><g:message code="action"/></th>
 
 
             </tr>

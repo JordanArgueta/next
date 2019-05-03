@@ -26,3 +26,4 @@
     <g:textField name="time" class="form-control" value="${event?.time}"/>
 </div>
 
+

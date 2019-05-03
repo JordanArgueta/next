@@ -37,6 +37,25 @@ class EventService {
         }
         return [list: eventList, count: eventList.size()]
     }
+    //To show a list of the currently created events
+    def list2(GrailsParameterMap params) {
+        params.max = params.max ?: GlobalConfig.itemsPerPage()
+        List<Event> eventList = Event.createCriteria().list(params) {
+
+            if (params?.colName && params?.colValue) {
+                like(params.colName, "%" + params.colValue + "%")
+            }
+            if (!params.sort) {
+                order("id", "desc")
+            }
+        }
+        for(int i=0; i < eventList.size(); i++){
+            if(eventList.get(i).getID() != 16)
+                eventList.remove(i)
+        }
+
+        return [list: eventList, count: eventList.size()]
+    }
 
     //Used to update any information about an event
     def update(Event event, GrailsParameterMap params){

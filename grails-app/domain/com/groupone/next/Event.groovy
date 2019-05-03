@@ -24,6 +24,10 @@ class Event {
     def getID(){
         return id
     }
+    def getName(){
+        return eventName
+    }
+
 
 
 }

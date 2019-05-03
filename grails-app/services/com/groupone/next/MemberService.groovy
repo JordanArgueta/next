@@ -1,12 +1,11 @@
 package com.groupone.next
 
+import grails.gorm.transactions.Transactional
 import grails.web.servlet.mvc.GrailsParameterMap
 
-
+@Transactional
 class MemberService {
-
-
-
+    //Saves member to database
     def save(GrailsParameterMap params){
         Member member = new Member(params)
         def response = AppUtil.saveResponse(false, member)
@@ -21,7 +20,7 @@ class MemberService {
         return response
 
     }
-
+    //Updates member info based on user input
     def update(Member member, GrailsParameterMap params){
         member.properties = params
         def response  = AppUtil.saveResponse(false, member)
@@ -35,12 +34,12 @@ class MemberService {
         }
         return response
     }
-
+    //Grabs userID
     def getById(Serializable id){
         return Member.get(id)
 
     }
-
+    //creates a list of current members
     def list(GrailsParameterMap params) {
         params.max = params.max ?: GlobalConfig.itemsPerPage()
         List<Member> memberList = Member.createCriteria().list(params) {
@@ -53,6 +52,7 @@ class MemberService {
         }
         return [list: memberList, count: Member.count()]
     }
+    //Deletes the current member from the site and database
     def delete(Member member) {
         try {
             member.delete(flush: true)

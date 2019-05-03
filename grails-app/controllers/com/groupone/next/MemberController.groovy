@@ -1,22 +1,21 @@
 package com.groupone.next
 
 class MemberController {
-
+//This controller contains all of the associated functionality that the member class requires.
 
     MemberService memberService
     AuthenticationService authenticationService
-    FriendService friendService
-
+    //
     def index() {
         def response = memberService.list(params)
         [memberList: response.list, total:response.count]
     }
-
+    //Shows friends of user
     def friends() {
         def response = memberService.list(params)
         [memberList: response.list, total:response.count]
     }
-
+    //Show details of user
     def details(Integer id) {
         def response = memberService.getById(id)
         if (!response){
@@ -25,31 +24,23 @@ class MemberController {
             [member: response]
         }
     }
-    def follow(Integer id) {
-        def response = memberService.getById(id)
-        Member member = response.get
-        if (!response){
-            redirect(controller: "member", action: "index")
-        }else{
-            [member: response]
-        }
-    }
 
+    //Grabs the contents in the parameters and creates a new member object.
     def create() {
         [member: flash.redirectParams]
     }
-
+    //Registers a member for an event.
     def register() {
         //println(authenticationService.getMember())
         [member: flash.redirectParams]
 
     }
-
+    //Signs the member into the site.
     def signIn() {
         [member: flash.message]
 
     }
-
+    //Tests authentication for logging a member into the site.
     def login() {
 
         if (params.email == "admin@uncw.edu" && params.password == "pass") {
@@ -63,14 +54,14 @@ class MemberController {
         }
 
     }
-
+    //Logs the member out of the site.
     def logout() {
         session.user = null
         flash.message = "You have been logged out."
         redirect(action: "signIn")
     }
 
-
+    //The action used to save a member.
     def save() {
         def response = memberService.save(params)
         if (!response.isSuccess) {
@@ -81,7 +72,7 @@ class MemberController {
         }
     }
 
-
+    //brings index back up to edit a member
     def edit(Integer id) {
         if (flash.redirectParams) {
             [member: flash.redirectParams]
@@ -95,7 +86,7 @@ class MemberController {
         }
     }
 
-
+    //the action used for updating a member, redirects to edit page.
     def update() {
         def response = memberService.getById(params.id)
         if (!response){
@@ -114,6 +105,7 @@ class MemberController {
         }
     }
 
+    // The action used to delete a member.
     def delete(Integer id) {
         def response = memberService.getById(id)
         if (!response){
