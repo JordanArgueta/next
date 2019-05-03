@@ -29,6 +29,7 @@
         %{--Member Action Menu--}%
  <ul class="navbar-nav ml-auto">
      <UIHelper:memberActionMenu/>
+
  </ul>
 </nav>
 </header>
