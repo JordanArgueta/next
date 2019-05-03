@@ -10,6 +10,11 @@ class MemberController {
         [memberList: response.list, total:response.count]
     }
 
+    def friends() {
+        def response = memberService.list(params)
+        [memberList: response.list, total:response.count]
+    }
+
     def details(Integer id) {
         def response = memberService.getById(id)
         if (!response){
