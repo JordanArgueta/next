@@ -18,8 +18,10 @@
                             <g:textField name="email" class="form-control" placeholder="Email" required="required" />
                             <g:passwordField name="password" class="form-control" placeholder="Password" required="required" />
                             <g:submitButton class="btn btn-lg btn-primary btn-block" name="login" value="Login"/>
-                            <g:link controller="member" action="create" class="btn btn-lg btn-primary btn-block">Member Sign-up</g:link>
+                            <g:link controller="authentication" action="signup" class="btn btn-lg btn-primary btn-block">Member Sign-up</g:link>
+                            © 2019 NEXT, Inc.
                         </g:form>
+
                     </div>
                 </div>
             </div>
