@@ -9,6 +9,33 @@
 <meta name="layout" content="main"/>
 
 <div class="card">
-   <h1> This shit need to do stuff fam</h1>
+   <h2> Successfully Registered</h2>
     </div>
+
+%{--Table Panel--}%
+<div class="card-body">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+        <tr>
+            <g:sortableColumn property="eventName" title="${g.message(code: "event.reg")}"/>
+
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <g:each in="${eventList}" var="info">
+            <tr>
+
+                <td>${info?.eventName}</td>
+
+            </tr>
+        </g:each>
+        </tbody>
+    </table>
+    %{--Pagination Area--}%
+    <div class="paginate">
+        <g:paginate total="${total ?: 0}" />
+    </div>
+</div>
 </div>

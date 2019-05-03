@@ -18521,7 +18521,7 @@ user-edit:
 user-friends:
   changes:
     - 5.0.11
-  label: User Friend
+  label: User Friends
   search:
     terms:
       - group

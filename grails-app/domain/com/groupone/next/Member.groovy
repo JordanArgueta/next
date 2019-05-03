@@ -30,4 +30,7 @@ class Member {
         this.password = this.password.encodeAsMD5()
 
     }
+    def getID() {
+        return id
+    }
 }

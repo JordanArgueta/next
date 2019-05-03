@@ -19,22 +19,13 @@ class UIHelperTagLib {
         def name = authenticationService.getMember()
         if (name != null) {
             out << g.link(class: "nav-link dropdown-toggle", "data-toggle": "dropdown") {
-                    authenticationService.getMemberName()
+                authenticationService.getMemberName()
             }
             out << '<div class="dropdown-menu">'
             out << g.link(controller: "authentication", action: "logout", class: "dropdown-item") {
                 g.message(code: "logout")
             }
             out << "</div></li>"
-        }
-    }
-
-    def memberName = { attrs, body ->
-        def name = authenticationService.getMember()
-        if (name != null) {
-            out << g.link() {
-                authenticationService.getMemberName()
-            }
         }
     }
 

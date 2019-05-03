@@ -18,6 +18,9 @@ class Event {
     def eventString() {
         return "Name: " + eventName + " Desc: " + eventDesc + " Address: " + address + " Date: " + date
     }
+    def getID(){
+        return id
+    }
 
 
 }

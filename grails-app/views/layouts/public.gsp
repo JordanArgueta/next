@@ -25,9 +25,9 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark rounded">
         <a class="navbar-brand" href="http://localhost:8080/">NEXT</a>
-        <g:link controller="authentication" action="login" class="navbar-brand"><g:message code="login"/></g:link>
+        <g:link controller="member" action="login" class="navbar-brand"><g:message code="login"/></g:link>
         <a class="navbar-brand" href="http://localhost:8080/member/create">Create a Profile</a>
-        <g:link controller="authentication" action="logout" class="navbar-brand"><g:message code="logout"/></g:link>
+        <g:link controller="member" action="logout" class="navbar-brand"><g:message code="logout"/></g:link>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
                 data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false"
                 aria-label="Toggle navigation">

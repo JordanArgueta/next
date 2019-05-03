@@ -53,7 +53,7 @@
             <tbody>
             <g:each in="${eventList}" var="info">
                 <tr>
-                    <td> <a href="/member/register" class="btn btn-default" role="button">
+                    <td> <a href="/event/register" class="btn btn-default" role="button">
                         ${info?.eventName}</a></td>
                     <td>${info?.eventDesc}</td>
                     <td>${info?.address}</td>

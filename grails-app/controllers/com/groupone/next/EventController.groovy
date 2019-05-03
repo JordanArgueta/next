@@ -1,8 +1,12 @@
 package com.groupone.next
 
+import groovy.sql.Sql
+
 class EventController {
 
     EventService eventService
+    AuthenticationService authenticationService
+
 
     def index() {
         def response = eventService.list(params)
@@ -65,5 +69,31 @@ class EventController {
         }else{
             redirect(controller: "event", action: "index")
         }
+    }
+
+
+    def register() {
+        def id = authenticationService.getMember().getID()
+        //def eveid = eventService.event.getID()
+
+        def db = [url: 'jdbc:mysql://satoshi.cis.uncw.edu/eqa9745?useUnicode=yes&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC', user:'eqa9745', password: 'xbX4WnNh4', driver:'com.mysql.cj.jdbc.Driver']
+
+        def sql = Sql.newInstance(db.url, db.user, db.password, db.driver)
+
+        def q2 = "INSERT INTO `register`(memberID, eventID) VALUES(" + id + ",1)"
+        def q = "SELECT * FROM `register` WHERE memberID = " + id
+
+
+        sql.execute(q2)
+
+        sql.eachRow(q) { row ->
+            println(row)
+        }
+        sql.close()
+
+        def response = eventService.list(params)
+        [eventList: response.list, total:response.count]
+
+
     }
 }
