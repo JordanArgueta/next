@@ -27,9 +27,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         %{--Member Action Menu--}%
-%{-- <ul class="navbar-nav ml-auto">
+ <ul class="navbar-nav ml-auto">
      <UIHelper:memberActionMenu/>
- </ul>--}%
+ </ul>
 </nav>
 </header>
 
