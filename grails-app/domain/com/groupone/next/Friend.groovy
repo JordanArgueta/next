@@ -3,17 +3,15 @@ package com.groupone.next
 class Friend {
 
     Integer id
-    String name
-    String image
-    Member member
+    String firstName
+    String lastName
+    String email
 
     static constraints = {
         image(nullable: true, blank: true)
     }
-
-    static mapping = {
-        version(false)
-        friendDetails(cascade: 'all-delete-orphan')
+    def getID() {
+        return id
     }
 
 }

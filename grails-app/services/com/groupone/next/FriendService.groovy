@@ -1,28 +1,47 @@
 package com.groupone.next
 
 import grails.web.servlet.mvc.GrailsParameterMap
-import javax.servlet.http.HttpServletRequest
 
 class FriendService {
 
     AuthenticationService authenticationService
 
-
-    def save(GrailsParameterMap params, HttpServletRequest request) {
-        Friend friend = new Friend(params)
-        friend.member = authenticationService.getMember()
+    def save(Member member){
+        Friend friend = new Friend ()
+        friend.firstName = member.firstName
+        friend.lastName = member.lastName
+        friend.email = member.email
         def response = AppUtil.saveResponse(false, friend)
-        if (friend.validate()) {
+        if (friend.validate()){
             friend.save(flush: true)
+            if(!friend.hasErrors()){
+                response.isSuccess = true
+
+            }
+
+        }
+        return response
+
+    }
+
+    def update(Friend friend, GrailsParameterMap params){
+        friend.properties = params
+        def response  = AppUtil.saveResponse(false, friend)
+        if (friend.validate()){
+            friend.save(flush: true)
+            if(!friend.hasErrors()){
+                response.isSuccess = true
+
+            }
+
         }
         return response
     }
 
-
-    def get(Serializable id) {
+    def getById(Serializable id){
         return Friend.get(id)
-    }
 
+    }
 
     def list(GrailsParameterMap params) {
         params.max = params.max ?: GlobalConfig.itemsPerPage()
@@ -33,12 +52,9 @@ class FriendService {
             if (!params.sort) {
                 order("id", "desc")
             }
-            eq("member", authenticationService.getMember())
         }
-        return [list: friendList, count: friendList.totalCount]
+        return [list: friendList, count: Friend.count()]
     }
-
-
     def delete(Friend friend) {
         try {
             friend.delete(flush: true)
@@ -49,15 +65,5 @@ class FriendService {
         return true
     }
 
-
-    def uploadImage(Friend friend, HttpServletRequest request){
-        if (request.getFile("friendImage") && !request.getFile("friendImage").filename.equals("")){
-            String image = FileUtil.uploadFriendImage(friend.id, request.getFile("friendImage"))
-            if (!image.equals("")){
-                friend.image = image
-                friend.save(flush:true)
-            }
-        }
-    }
 
 }

@@ -9,7 +9,7 @@
 
 <div class="card">
     <div class="card-header">
-        <g:message code="member" args="['Details']"/>
+        <g:message code="member.details" args="['Details']"/>
     </div>
     <div class="card-body">
         <g:if test="${member}">
@@ -29,6 +29,7 @@
             </table>
         </g:if>
         <div class="form-action-panel">
+            <g:link controller="member" action="returnUser" class="btn btn-primary"><g:message code="follow"/></g:link>
             <g:link controller="member" action="index" class="btn btn-primary"><g:message code="cancel"/></g:link>
         </div>
     </div>

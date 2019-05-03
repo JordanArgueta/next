@@ -25,6 +25,15 @@ class MemberController {
             [member: response]
         }
     }
+    def follow(Integer id) {
+        def response = memberService.getById(id)
+        Member member = response.get
+        if (!response){
+            redirect(controller: "member", action: "index")
+        }else{
+            [member: response]
+        }
+    }
 
     def create() {
         [member: flash.redirectParams]

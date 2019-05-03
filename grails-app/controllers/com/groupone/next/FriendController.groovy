@@ -3,6 +3,7 @@ package com.groupone.next
 class FriendController {
 
     FriendService friendService
+    MemberService memberService
 
     def index() {
         def response = friendService.list(params)
