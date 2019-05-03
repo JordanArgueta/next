@@ -13,6 +13,7 @@ class EventController {
         [event: flash.redirectParams]
     }
 
+
     def edit(Integer id) {
         if (flash.redirectParams) {
             [event: flash.redirectParams]

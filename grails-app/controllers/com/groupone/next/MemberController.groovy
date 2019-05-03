@@ -23,6 +23,11 @@ class MemberController {
         [member: flash.redirectParams]
     }
 
+    def register() {
+        //println(session.user)
+        [member: flash.redirectParams]
+    }
+
     def signIn() {
         [member: flash.message]
 

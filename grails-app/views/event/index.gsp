@@ -46,12 +46,15 @@
                 <g:sortableColumn property="address" title="${g.message(code: "event.address")}"/>
                 <g:sortableColumn property="date" title="${g.message(code: "event.date")}"/>
                 <g:sortableColumn property="time" title="${g.message(code: "event.time")}"/>
+
+
             </tr>
             </thead>
             <tbody>
             <g:each in="${eventList}" var="info">
                 <tr>
-                    <td>${info?.eventName}</td>
+                    <td> <a href="/member/register" class="btn btn-default" role="button">
+                        ${info?.eventName}</a></td>
                     <td>${info?.eventDesc}</td>
                     <td>${info?.address}</td>
                     <td>${info?.date}</td>

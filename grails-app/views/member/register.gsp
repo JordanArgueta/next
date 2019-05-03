@@ -9,6 +9,6 @@
 <meta name="layout" content="main"/>
 
 <div class="card">
-   <h1> This shit need to do stuff fam</h1>
+   <h2> Successfully Registered!</h2>
     </div>
 </div>
