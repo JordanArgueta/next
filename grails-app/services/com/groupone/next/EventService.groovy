@@ -6,6 +6,8 @@ import grails.web.servlet.mvc.GrailsParameterMap
 @Transactional
 class EventService {
 
+
+    // Called whenever a new event is created
     def save(GrailsParameterMap params){
         Event event = new Event(params)
         println(event.eventString())
@@ -22,6 +24,7 @@ class EventService {
 
     }
 
+    //To show a list of the currently created events
     def list(GrailsParameterMap params) {
         params.max = params.max ?: GlobalConfig.itemsPerPage()
         List<Event> eventList = Event.createCriteria().list(params) {
@@ -35,6 +38,7 @@ class EventService {
         return [list: eventList, count: eventList.size()]
     }
 
+    //Used to update any information about an event
     def update(Event event, GrailsParameterMap params){
         event.properties = params
         def response  = AppUtil.saveResponse(false, event)
@@ -49,6 +53,7 @@ class EventService {
         return response
     }
 
+    //Used to delete an event entirely
     def delete(Event event) {
         try {
             event.delete(flush: true)

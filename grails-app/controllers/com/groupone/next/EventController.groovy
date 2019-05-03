@@ -7,17 +7,17 @@ class EventController {
     EventService eventService
     AuthenticationService authenticationService
 
-
+    //
     def index() {
         def response = eventService.list(params)
         [eventList: response.list, total:response.count]
     }
-
+    //Grabs the contents in the parameters and creates a new event object.
     def create() {
         [event: flash.redirectParams]
     }
 
-
+    //brings index back up to edit an event
     def edit(Integer id) {
         println("EVENT ID " + id)
         if (flash.redirectParams) {
@@ -32,7 +32,7 @@ class EventController {
         }
     }
 
-
+    // the action used for updating an event, redirects to edit page.
     def update() {
         def response = eventService.getById(params.id)
         if (!response){
@@ -51,6 +51,7 @@ class EventController {
         }
     }
 
+    // The action used to delete an event.
     def delete(Integer id) {
         def response = eventService.getById(id)
         if (!response){
@@ -61,6 +62,7 @@ class EventController {
         }
     }
 
+    //The action used to save an event.
     def save() {
         def response = eventService.save(params)
         println(params)
@@ -71,7 +73,8 @@ class EventController {
             redirect(controller: "event", action: "index")
         }
     }
-
+    //the action used to view all of the details of an event. This method pulls from the database where we stored user
+    // data.
     def details(Integer id) {
         def response = eventService.getById(id)
         if (!response){
@@ -103,7 +106,8 @@ class EventController {
             [event: response]
         }
     }
-
+    // Used to register a user to a specified event. Brings information from database about both the event and the member
+    // to insert into another registered table.
     def register(Integer id1) {
         println("EVENT ID " + id1)
         if (flash.redirectParams) {
