@@ -1,10 +1,11 @@
 package com.groupone.next
 
-import grails.gorm.transactions.Transactional
 import grails.web.servlet.mvc.GrailsParameterMap
 
-@Transactional
+
 class MemberService {
+
+
 
     def save(GrailsParameterMap params){
         Member member = new Member(params)

@@ -35,7 +35,7 @@
  <nav class = "col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
      <ul>
          <li class = "list-group-item"><a href = "http://localhost:8080/">Home</a></li>
-         <li class = "list-group-item"><a href = "http://localhost:8080/member/index">Friends</a></li>
+         <li class = "list-group-item"><a href = "http://localhost:8080/friend/index">Friends</a></li>
          <li class = "list-group-item"><a href = "http://localhost:8080/event/index">Events</a></li>
      </ul>
  </nav>

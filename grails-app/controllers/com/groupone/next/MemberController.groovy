@@ -5,6 +5,7 @@ class MemberController {
 
     MemberService memberService
     AuthenticationService authenticationService
+    FriendService friendService
 
     def index() {
         def response = memberService.list(params)

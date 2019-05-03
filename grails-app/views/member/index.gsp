@@ -9,7 +9,7 @@
 
 <div class="card">
     <div class="card-header">
-        <g:message code="member" args="['List Of']"/>
+        <g:message code="member.list" args="['List Of']"/>
 
 
         <span class = "float-right">
@@ -29,7 +29,7 @@
 
         %{--Create and Reload Panel--}%
         <div class="btn-group">
-            <g:link controller="member" action="friends" class="btn btn-success"><g:message code="friends"/></g:link>
+            <g:link controller="friend" action="index" class="btn btn-success"><g:message code="friends"/></g:link>
             <g:link controller="member" action="index" class="btn btn-primary"><g:message code="all"/></g:link>
         </div>
 
@@ -56,8 +56,10 @@
                     <td>
                         <div class="btn-group">
                             <g:link controller="member" action="details" class="btn btn-secondary" id="${info.id}"><i class="fas fa-eye"></i></g:link>
+                        %{--
                             <g:link controller="member" action="edit" class="btn btn-secondary" id="${info.id}"><i class="fas fa-edit"></i></g:link>
                             <g:link controller="member" action="delete" id="${info.id}" class="btn btn-secondary delete-confirmation"><i class="fas fa-trash"></i></g:link>
+                          --}%
                         </div>
                     </td>
                 </tr>
