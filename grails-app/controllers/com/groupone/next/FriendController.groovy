@@ -9,7 +9,7 @@ class FriendController {
         def response = friendService.list(params)
         [friend: response.list, total:response.count]
     }
-
+    //Returns details corresponding to friend
     def details(Integer id) {
         def response = friendService.get(id)
         if (!response){
@@ -18,11 +18,11 @@ class FriendController {
             [friend: response]
         }
     }
-
+    //creates a new friend
     def create() {
         [friend: flash.redirectParams]
     }
-
+    //saves a friend
     def save() {
         def response = friendService.save(params, request)
         if (response.isSuccess) {
@@ -34,7 +34,7 @@ class FriendController {
             redirect(controller: "friend", action: "create")
         }
     }
-
+    //Edits a friend
     def edit(Integer id) {
         if (flash.redirectParams) {
             [friend: flash.redirectParams]
@@ -48,7 +48,7 @@ class FriendController {
             }
         }
     }
-
+    //Updates a friend
     def update() {
         def response = friendService.get(params.id)
         if (!response){
@@ -66,7 +66,7 @@ class FriendController {
             }
         }
     }
-
+    //Delete a friend
     def delete(Integer id) {
         def response = friendService.get(id)
         if (!response){

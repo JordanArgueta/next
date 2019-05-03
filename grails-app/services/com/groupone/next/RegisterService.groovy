@@ -5,12 +5,13 @@ import grails.web.servlet.mvc.GrailsParameterMap
 
 @Transactional
 class RegisterService {
-
+    //grabs the registration by id
     def getById(Serializable id){
         return Register.get(id)
 
     }
 
+    //returns a list of registered events
     def list(GrailsParameterMap params) {
         params.max = params.max ?: GlobalConfig.itemsPerPage()
         List<Register> regList = Register.createCriteria().list(params) {
@@ -24,6 +25,7 @@ class RegisterService {
         return [list: regList, count: Register.count()]
     }
 
+    //saves a new registration
     def save(GrailsParameterMap params){
         Register register = new Register(params)
         println(register.eventString())
