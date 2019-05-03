@@ -58,4 +58,9 @@ class EventService {
         }
         return true
     }
+    def getById(Serializable id){
+        return Event.get(id)
+
+    }
+
 }

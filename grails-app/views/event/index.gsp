@@ -53,12 +53,19 @@
             <tbody>
             <g:each in="${eventList}" var="info">
                 <tr>
-                    <td> <a href="/event/register" class="btn btn-default" role="button">
-                        ${info?.eventName}</a></td>
+                    <td>${info?.eventName}</td>
                     <td>${info?.eventDesc}</td>
                     <td>${info?.address}</td>
                     <td>${info?.date}</td>
                     <td>${info?.time}</td>
+                    %{--Table Actions --}%
+                    <td>
+                        <div class="btn-group">
+                            <g:link controller="event" action="details" class="btn btn-secondary" id="${info.id}"><i class="fas fa-eye"></i></g:link>
+                            <g:link controller="event" action="edit" class="btn btn-secondary" id="${info.id}"><i class="fas fa-edit"></i></g:link>
+                            <g:link controller="event" action="delete" id="${info.id}" class="btn btn-secondary delete-confirmation"><i class="fas fa-trash"></i></g:link>
+                        </div>
+                    </td>
                 </tr>
             </g:each>
             </tbody>

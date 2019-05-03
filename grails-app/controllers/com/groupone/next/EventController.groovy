@@ -71,8 +71,17 @@ class EventController {
         }
     }
 
+    def details(Integer id) {
+        def response = eventService.getById(id)
+        if (!response){
+            redirect(controller: "event", action: "index")
+        }else{
+            [event: response]
+        }
+    }
 
-    def register() {
+
+    def register(Integer eveid) {
         def id = authenticationService.getMember().getID()
         //def eveid = eventService.event.getID()
 
@@ -80,7 +89,11 @@ class EventController {
 
         def sql = Sql.newInstance(db.url, db.user, db.password, db.driver)
 
-        def q2 = "INSERT INTO `register`(memberID, eventID) VALUES(" + id + ",1)"
+        //Hardcoded bs
+        //def q2 = "INSERT INTO `register`(memberID, eventID) VALUES(" + id + ",1)"
+
+        //Real Query
+        def q2 = "INSERT INTO `register`(memberID, eventID) VALUES(" + id + "," + eveid +")"
         def q = "SELECT * FROM `register` WHERE memberID = " + id
 
 

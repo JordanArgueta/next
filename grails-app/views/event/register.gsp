@@ -12,30 +12,24 @@
    <h2> Successfully Registered</h2>
     </div>
 
-%{--Table Panel--}%
-<div class="card-body">
-    <table class="table table-bordered">
-        <thead class="thead-dark">
-        <tr>
-            <g:sortableColumn property="eventName" title="${g.message(code: "event.reg")}"/>
+%{--Include Main Layout--}%
+<meta name="layout" content="main"/>
 
-
-
-        </tr>
-        </thead>
-        <tbody>
-        <g:each in="${eventList}" var="info">
-            <tr>
-
-                <td>${info?.eventName}</td>
-
-            </tr>
-        </g:each>
-        </tbody>
-    </table>
-    %{--Pagination Area--}%
-    <div class="paginate">
-        <g:paginate total="${total ?: 0}" />
+<div class="card">
+    <div class="card-header">
+        <g:message code="event" args="['Register']"/>
     </div>
-</div>
+    <div class="card-body">
+        <g:if test="${event}">
+            <table class="table">
+                <tr>
+                    <th class="text-right"><g:message code="event.name"/></th><td class="text-left">${event.eventName}</td>
+                </tr>
+
+            </table>
+        </g:if>
+        <div class="form-action-panel">
+            <g:link controller="event" action="index" class="btn btn-primary"><g:message code="cancel"/></g:link>
+        </div>
+    </div>
 </div>
