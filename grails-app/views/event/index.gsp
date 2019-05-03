@@ -53,7 +53,7 @@
             <tbody>
             <g:each in="${eventList}" var="info">
                 <tr>
-                    <td>${info?.eventName}</td>
+                    <td><g:link action="register" id="${info?.id}">${info?.eventName}</g:link></td>
                     <td>${info?.eventDesc}</td>
                     <td>${info?.address}</td>
                     <td>${info?.date}</td>

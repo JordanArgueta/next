@@ -83,7 +83,7 @@ class EventController {
 
     def register(Integer eveid) {
         def id = authenticationService.getMember().getID()
-        //def eveid = eventService.event.getID()
+        def eveID = eventService.event.getID()
 
         def db = [url: 'jdbc:mysql://satoshi.cis.uncw.edu/eqa9745?useUnicode=yes&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC', user:'eqa9745', password: 'xbX4WnNh4', driver:'com.mysql.cj.jdbc.Driver']
 
@@ -93,7 +93,7 @@ class EventController {
         //def q2 = "INSERT INTO `register`(memberID, eventID) VALUES(" + id + ",1)"
 
         //Real Query
-        def q2 = "INSERT INTO `register`(memberID, eventID) VALUES(" + id + "," + eveid +")"
+        def q2 = "INSERT INTO `register`(memberID, eventID) VALUES(" + id + "," + eveID +")"
         def q = "SELECT * FROM `register` WHERE memberID = " + id
 
 
