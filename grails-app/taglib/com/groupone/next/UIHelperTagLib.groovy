@@ -25,6 +25,9 @@ class UIHelperTagLib {
             out << g.link(controller: "authentication", action: "logout", class: "dropdown-item") {
                 g.message(code: "logout")
             }
+            out << g.link(controller: "event", action: "register", class: "dropdown-item") {
+                g.message(code: "Registered Events")
+            }
             out << "</div></li>"
         }
     }
